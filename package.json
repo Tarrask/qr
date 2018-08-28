@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "nuxt",
-    "generate": "DEPLOY_ENV=GH_PAGES nuxt generate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "author": "Damien Plumettaz",
   "license": "ISC",
   "dependencies": {
     "nuxt": "^1.4.2",
     "qrcode": "^1.2.2"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "push-dir": "^0.4.1"
   }
 }
