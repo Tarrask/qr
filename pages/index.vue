@@ -9,7 +9,7 @@ import QRCode from 'qrcode';
 
 export default {
   mounted() {
-    QRCode.toCanvas(this.$refs.canvas, this.$route.params.text || "hello");
+    QRCode.toCanvas(this.$refs.canvas, this.$route.query.text || "hello");
   }
 }
 </script>
